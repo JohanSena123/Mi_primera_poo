@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Molde de la clase
+        class vehiculo{
+            constructor(marca,modelo){
+                //Atributos de la clase
+                this.marca=marca;
+                this.modelo=modelo;
+                this.luces=function(){
+                    let mensaje="Luces apagadas"
+                    return mensaje;
+                }
+                this.puertas=()=>{
+                    return "Puertas cerradas"
+                }
+            }
+            //Metodo clase
+            acelerarVehiculo(){
+                console.log(`vehiculo: ${this.marca} de Modelo: ${this.modelo}`);
+                console.log(this.prenderMotor());
+                console.log(this.luces());
+                console.log(this.puertas());
+            }
+            prenderMotor(){
+                let mensaje="Motor Encendido";
+                return mensaje;
+            }
+        }
+
+        class Moto extends vehiculo{
+            constructor(marca,modelo,color,año){
+                super(marca,modelo);
+                this.color=color;
+                this.año=año;
+            }
+        verInfo(){
+            console.log(`Marca del vehiculo: ${this.marca}`);
+            console.log(`Modelo del vehiculo: ${this.modelo}`);
+            console.log(`Color del vehiculo: ${this.color}`);
+            console.log(`año del vehiculo: ${this.año}`);
+            console.log(super.prenderMotor());
+        }
+        }
+    //Codigo principal
+    //Se crea la instancia de la clase
+    const objVehiculo=new vehiculo("Toyota", "Corolla");
+    //llamado de la metodo clase
+    objVehiculo.acelerarVehiculo()
+    </script>
+</body>
+</html>
